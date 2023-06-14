@@ -10,19 +10,26 @@
 
 <body>
   <header>
+    <!-- NAV BAR -->
     <nav>
-      <a href="#" class="logo">
-        <img src="startup.gif" alt="Ravandelp Company Logo">&nbspRavandel
+      <a href="#hero" class="logo">
+        <img src="startup.gif" alt="Ravandelp Company Logo" class="scroll-link">&nbspRavandel
       </a>
+      <a href="#services" class="scroll-link">Services</a>
+      <a href="#contact" class="scroll-link">Contact Us</a>
+      <a href="#about" class="scroll-link">About</a>
+      <a href="#team" class="scroll-link">Our Team</a>
     </nav>
-  </header>
+    </header>
   <section id="hero">
-    <div class="hero-content">
-      <h1>Welcome to Ravandel</h1>
-      <p>We provide innovative solutions for your business needs.</p>
-      <a href="#contact" class="btn">Get Started</a>
-    </div>
-  </section>
+  <div class="hero-content">
+    <h1>Welcome to <span class="animated-text">Ravandel</span></h1>
+    <p>We provide innovative solutions for your business needs.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+</section>
+
+
   <section id="services">
   <div class="service">
     <div class="flip-card">
@@ -54,7 +61,7 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h2>B2B Sales</h2>
+          <h2>Business Development (B2B)</h2>
           <img src="service-3.gif" alt="B2B Sales">
         </div>
         <div class="flip-card-back">
@@ -74,7 +81,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <!-- <section id="contact">
     <div class="contact-form">
       <h2>Contact Us</h2>
       <form action="#" method="POST">
@@ -85,10 +92,53 @@
       </form>
     </div>
   </section>
+  <!-- CONTACT US --> -->
+  <section id="contact">
+    <div class="card contact-card">
+      <div class="card-header">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="card-body">
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
 
   <footer>
     <p>&copy; 2023 Ravandel. All rights reserved. | <a href="#">Privacy Policy</a></p>
   </footer>
+
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollLinks = document.querySelectorAll('.scroll-link');
+
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const logoLink = document.querySelector('.logo');
+
+    logoLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = logoLink.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
 </body>
 
 </html>
