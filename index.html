@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ravandel</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -123,6 +124,20 @@
      <div class="wave"></div>
      <div class="wave"></div>
   </div>
+  <div id="floating-chat-button" onclick="toggleChat()">
+    <i class="fa fa-comment"></i>
+  </div>
+  <div id="chat-content" style="display: none;">
+    <!-- Your chat content here -->
+    <p>Welcome to Ravandel! How can we assist you today?</p>
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message" />
+      <button class="send-btn"><i class="fa fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+
+
   <footer>
       <p>&copy; 2023 Ravandel. All rights reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
@@ -148,7 +163,19 @@
       targetSection.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+  // chat support functions
+  function toggleChat() {
+    var chatContent = document.getElementById("chat-content");
+    
+    if (chatContent.style.display === "none") {
+      chatContent.style.display = "block";
+    } else {
+      chatContent.style.display = "none";
+    }
+  }
 </script>
+  
 </body>
 
 </html>
