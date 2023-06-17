@@ -393,7 +393,14 @@ section {
   100% { transform: translateX(0); }
 }
 
+.carousel-slide.fade {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
 
+  .carousel-slide.fade.active {
+    opacity: 1;
+  }
 /* CONTACT CARD */
 #contact {
   padding-top: 150px;
@@ -603,6 +610,37 @@ footer {
 footer a {
   color: #fff;
 }
+/* web-dev services */
+#web-dev {
+  padding-top: 150px;
+}
+ .masked-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+.masked-bg img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
+    object-fit: contain;
+    padding-bottom: 10px;
+    vertical-align: middle;
+  }
+/* Dynamically adjust the text color for h3 based on the background color */
+  .masked-bg.dark-bg h3 {
+    color: #fff; /* Set the desired text color for dark backgrounds */
+  }
+
+  .masked-bg.light-bg h3 {
+    color: #000; /* Set the desired text color for light backgrounds */
+  }
+.masked-content {
+    color: #fff;
+    font-size: 20px;
+  }
+
 /* Responsive styles */
 
 /* Adjust the font size and padding for smaller screens */
@@ -649,6 +687,7 @@ footer a {
 
   }
   
+
   #contact {
     padding-top: 50px;
     margin: 40px;
